@@ -2,6 +2,7 @@
 
 ## Low level extensions
 #### Simple Kotlin, Java library for easy work with numeric types converting to bytes array and vice versa.
+#### Support for all Number types.
 #### Kotlin example of usage:
 Convert integer to byte array
 ```kotlin
@@ -37,6 +38,6 @@ allprojects {
 and to module level build.gradle
 ```groovy
 dependencies {
- implementation 'com.github.ArtemBotnev:low-level-extensions:0.2.0'
+ implementation 'com.github.ArtemBotnev:low-level-extensions:1.0.0'
 }
 ```
