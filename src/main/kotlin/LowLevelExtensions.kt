@@ -76,6 +76,36 @@ fun ByteArray.toFloat(): Float = toNumeric(Float.SIZE_BYTES) { float }
 @Throws(NumberFormatException::class)
 fun ByteArray.toDouble(): Double = toNumeric(Double.SIZE_BYTES) { double }
 
+/**
+ * Converts byte array to its hex string representation. Example: [34, 0, 0, -101] to "2200009b"
+ * @param upperCase - should use upper case for letters in result string
+ * @return hex string representing this byte array
+ */
+fun ByteArray.toHexString(upperCase: Boolean = false): String {
+    val x = if (upperCase) 'X' else 'x'
+
+    return this.joinToString(separator = "") { "%02$x".format(it) }
+}
+
+/**
+ * Converts hex string, which represent byte array, to byte array. Example: "2200009b" to [34, 0, 0, -101]
+ * @return byte array from this string
+ * @throws java.lang.NumberFormatException in case if string contains illegal letters (must contains only a,b,c,b,e,f)
+ */
+@Throws(java.lang.NumberFormatException::class)
+fun String.toByteArray(): ByteArray {
+    val size = this.length shr 1
+    val array = ByteArray(size)
+
+    for (i in this.indices step 2) {
+        val strByte = this.substring(i, i + 2)
+        val byte = strByte.toInt(radix = 16).toByte()
+        array[i shr 1] = byte
+    }
+
+    return array
+}
+
 private inline fun numberToByteArray(size: Int, bufferFun: ByteBuffer.() -> ByteBuffer): ByteArray =
     ByteBuffer.allocate(size).bufferFun().array()
 

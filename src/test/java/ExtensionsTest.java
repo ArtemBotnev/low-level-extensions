@@ -48,4 +48,13 @@ public class ExtensionsTest {
         byte[] bytes = new byte[] { -12, 32, 12 };
         LowLevelExtensionsKt.toFloat(bytes);
     }
+
+    @Test
+    public void byteArrayHexStringTest() {
+        byte[] byteArray = { -12, 32, 12, 0, 32, -73, 94, 120, -54, 34, 93, -107 };
+        String hexString = LowLevelExtensionsKt.toHexString(byteArray, false);
+        byte[] result = LowLevelExtensionsKt.toByteArray(hexString);
+
+        assertArrayEquals(byteArray, result);
+    }
 }
