@@ -67,6 +67,6 @@ allprojects {
 and to module level build.gradle
 ```groovy
 dependencies {
- implementation 'com.github.ArtemBotnev:low-level-extensions:1.1.0'
+ implementation 'com.github.ArtemBotnev:low-level-extensions:1.1.1'
 }
 ```
