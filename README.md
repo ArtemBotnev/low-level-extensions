@@ -26,7 +26,7 @@ You can pass ```true``` to function ```toHexString(true)``` for upper case lette
 Convert hex string to byte array
 ```kotlin
 val hexString = "a0f33402"
-val bytes = hexString.toByteArray()
+val bytes = hexString.fromHexStringToByteArray()
 ```
 
 #### Java example of usage:
@@ -51,7 +51,7 @@ You can pass ```true``` to method ```toHexString(byteArray, true)``` for upper c
 Convert hex string to byte array
 ```java
 String hexString  = "a0f33402";
-byte[] byteArray = LowLevelExtensionsKt.toByteArray(hexString);
+byte[] byteArray = LowLevelExtensionsKt.fromHexStringToByteArray(hexString);
 ```
 
 #### To use this, add dependensies to your project:
@@ -67,6 +67,6 @@ allprojects {
 and to module level build.gradle
 ```groovy
 dependencies {
- implementation 'com.github.ArtemBotnev:low-level-extensions:1.1.0'
+ implementation 'com.github.ArtemBotnev:low-level-extensions:1.1.1'
 }
 ```

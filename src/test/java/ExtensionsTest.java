@@ -7,7 +7,7 @@ public class ExtensionsTest {
     @Test
     public void convertInt() {
         int source = -343;
-        byte[] bytes = LowLevelExtensionsKt.toByteArray(source);
+        byte[] bytes = LowLevelExtensionsKt.fromHexStringToByteArray(source);
         int result = LowLevelExtensionsKt.toInt(bytes);
 
         assertEquals(source, result);
@@ -22,7 +22,7 @@ public class ExtensionsTest {
     @Test
     public void convertLong() {
         long source = 3492L;
-        byte[] bytes = LowLevelExtensionsKt.toByteArray(source);
+        byte[] bytes = LowLevelExtensionsKt.fromHexStringToByteArray(source);
         long result = LowLevelExtensionsKt.toLong(bytes);
 
         assertEquals(source, result);
@@ -37,7 +37,7 @@ public class ExtensionsTest {
     @Test
     public void convertFloat() {
         float source = 5124.0753f;
-        byte[] bytes = LowLevelExtensionsKt.toByteArray(source);
+        byte[] bytes = LowLevelExtensionsKt.fromHexStringToByteArray(source);
         float result = LowLevelExtensionsKt.toFloat(bytes);
 
         assertEquals(source, result, 0.00001);
@@ -53,7 +53,7 @@ public class ExtensionsTest {
     public void byteArrayHexStringTest() {
         byte[] byteArray = { -12, 32, 12, 0, 32, -73, 94, 120, -54, 34, 93, -107 };
         String hexString = LowLevelExtensionsKt.toHexString(byteArray, false);
-        byte[] result = LowLevelExtensionsKt.toByteArray(hexString);
+        byte[] result = LowLevelExtensionsKt.fromHexStringToByteArray(hexString);
 
         assertArrayEquals(byteArray, result);
     }

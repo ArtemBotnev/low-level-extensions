@@ -10,31 +10,31 @@ val Double.Companion.SIZE_BYTES: Int
  * Converts short variable to byte array
  * @return 2 byte array representing short variable
  */
-fun Short.toByteArray() = numberToByteArray(Short.SIZE_BYTES) { putShort(this@toByteArray) }
+fun Short.fromHexStringToByteArray() = numberToByteArray(Short.SIZE_BYTES) { putShort(this@fromHexStringToByteArray) }
 
 /**
  * Converts integer variable to byte array
  * @return 4 byte array representing integer variable
  */
-fun Int.toByteArray() = numberToByteArray(Int.SIZE_BYTES) { putInt(this@toByteArray) }
+fun Int.fromHexStringToByteArray() = numberToByteArray(Int.SIZE_BYTES) { putInt(this@fromHexStringToByteArray) }
 
 /**
  * Converts long variable to byte array
  * @return 8 byte array representing long variable
  */
-fun Long.toByteArray() = numberToByteArray(Long.SIZE_BYTES) { putLong(this@toByteArray) }
+fun Long.fromHexStringToByteArray() = numberToByteArray(Long.SIZE_BYTES) { putLong(this@fromHexStringToByteArray) }
 
 /**
  * Converts float variable to byte array
  * @return 4 byte array representing float variable
  */
-fun Float.toByteArray() = numberToByteArray(Float.SIZE_BYTES) { putFloat(this@toByteArray) }
+fun Float.fromHexStringToByteArray() = numberToByteArray(Float.SIZE_BYTES) { putFloat(this@fromHexStringToByteArray) }
 
 /**
  * Converts double variable to byte array
  * @return 8 byte array representing double variable
  */
-fun Double.toByteArray() = numberToByteArray(Double.SIZE_BYTES) { putDouble(this@toByteArray) }
+fun Double.fromHexStringToByteArray() = numberToByteArray(Double.SIZE_BYTES) { putDouble(this@fromHexStringToByteArray) }
 
 /**
  * Converts byte array to short variable
@@ -93,7 +93,7 @@ fun ByteArray.toHexString(upperCase: Boolean = false): String {
  * @throws java.lang.NumberFormatException in case if string contains illegal letters (must contains only a,b,c,b,e,f)
  */
 @Throws(java.lang.NumberFormatException::class)
-fun String.toByteArray(): ByteArray {
+fun String.fromHexStringToByteArray(): ByteArray {
     val size = this.length shr 1
     val array = ByteArray(size)
 
